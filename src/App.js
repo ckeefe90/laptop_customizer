@@ -56,15 +56,18 @@ class App extends Component {
         const itemHash = slugify(JSON.stringify(item));
         return (
           <Item
+            key={itemHash}
             itemHash={itemHash}
             feature={feature}
             item={item}
-            selected={this.state.selected}/>
+            selected={this.state.selected}
+            updateFeature={this.updateFeature}/>
         );
       });
 
       return (
         <Feature
+          key={featureHash}
           featureHash={featureHash}
           feature={feature}
           options={options}/>
@@ -77,6 +80,7 @@ class App extends Component {
 
       return (
         <Summary
+        key={featureHash}
         featureHash={featureHash}
         feature={feature}
         selectedOption={selectedOption}
