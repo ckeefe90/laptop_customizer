@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
+import FeatureList from './FeatureList.js';
 
 export default class Form extends Component {
     render() {
-        const {
-            features
-        } = this.props;
         return (
         <form className="main__form">
             <h2>Customize your laptop</h2>
-            {features}
+            <FeatureList 
+                updateFeature={this.props.updateFeature}
+                selected={this.props.selected}/>
           </form>
         )
     }
